@@ -19,7 +19,7 @@ module.exports.create = async (req, res) => {
 // ACTION TO VIEW A QUESTION
 module.exports.showQuestion = async (req, res) => {
   try {
-    const ques = await Question.findById(req.params.id);
+    const ques = await Question.findById(req.params.id).populate("options");
     if (ques) {
       return res.status(200).json({
         message: "Successfully Fetched question from Databse",
