@@ -9,6 +9,7 @@ const db = require("./config/mongoose");
 // TO PUT AlL ENTERED VALUES IN BODY KEY
 app.use(express.urlencoded({ extended: true }));
 
+// ROUTES INDEX
 app.use("/", require("./routes/index"));
 
 app.listen(port, (err) => {

@@ -37,6 +37,7 @@ module.exports.showQuestion = async (req, res) => {
   }
 };
 
+// ACTION TO DELETE A QUESTION
 module.exports.delete = async (req, res) => {
   const ques = await Question.findById(req.params.id)
     .clone()
@@ -44,11 +45,13 @@ module.exports.delete = async (req, res) => {
       console.log(err);
     });
   if (ques) {
+    // DELETING THE QUESTION
     await Question.deleteOne(req.params.id)
       .clone()
       .catch(function (err) {
         console.log(err);
       });
+    // DELETING ALL THE OPTIONS OF THE QUESTION
     await Option.deleteMany({ question: req.params.id })
       .clone()
       .catch(function (err) {
