@@ -1,7 +1,9 @@
 const { on } = require("events");
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/polling_api");
+mongoose.connect(
+  "mongodb+srv://akashmistryofficial:03260220@cluster0.vf107gu.mongodb.net/?retryWrites=true&w=majority"
+);
 
 const db = mongoose.connection;
 

@@ -23,7 +23,7 @@ module.exports.create = async (req, res) => {
     ques.options.push(updateOption);
     ques.save();
     return res.status(200).json({
-      message: "Successfullt added option to the question",
+      message: "Successfully added option to the question",
     });
   } else {
     return res.status(200).json({
